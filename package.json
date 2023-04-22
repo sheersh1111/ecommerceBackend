@@ -2,9 +2,10 @@
   "name": "e-commerce",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "test":"npm start",
+    "dev":"nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +33,6 @@
     "validator": "^13.7.0"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=14 <15"
   }
 }
