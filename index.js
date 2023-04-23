@@ -20,12 +20,6 @@ process.on("ReferenceError",(err)=>{
 // const productRoute = require("../backend/routes/productRoute")
 //connecting to database 
 
-app.use(express.static(path.join(__dirname,"./build")));
-app.get("*", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./build/index.html"));
-})
-
-
 connectDatabase();
 
 cloudinary.config({
