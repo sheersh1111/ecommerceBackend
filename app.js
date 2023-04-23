@@ -6,6 +6,7 @@ const path = require("path")
 const dotenv=require("dotenv");
 const errorMiddleware =require("./middleware/error");
 const app = express();
+const cors=require("cors");
 
 dotenv.config({path:"backend/config/config.env"});
 app.use(express.json({limit:"50mb"}));
@@ -14,12 +15,7 @@ app.use(express.urlencoded({limit:"50mb",extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileUpload());
 
-app.use(express.static(path.join(__dirname,"./build")));
-app.get("*", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./build/index.html"));
-})
-
-
+app.use(cors());
 //route imports
 const user=require("./routes/userRoute")
 const product =require("./routes/productRoute");
